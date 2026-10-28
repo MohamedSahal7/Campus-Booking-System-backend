@@ -70,7 +70,7 @@ class AuthService:
                 "message": "Invalid email or password."
             }, 401
         access_token = create_access_token(
-            identity=str(user.id),
+            identity=user.id,
             additional_claims={
                 "role": user.role
             },
