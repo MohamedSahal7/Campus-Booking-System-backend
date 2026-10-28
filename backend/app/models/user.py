@@ -42,6 +42,11 @@ class User(db.Model):
     #     back_populates="user",
     #     cascade="all, delete-orphan",
     # )
+    bookings = db.relationship(
+        "Booking",
+        back_populates="user",
+        cascade="all, delete-orphan",
+     )
 
     def to_dict(self):
         return {
